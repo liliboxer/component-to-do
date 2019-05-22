@@ -3,7 +3,6 @@ const test = QUnit.test;
 QUnit.module('html equal');
 
 test('normalizes whitespace', (assert) => {
-    // Arrange
     const html = /*html*/`
             <div>
                 <span>hello</span>
@@ -16,9 +15,5 @@ test('normalizes whitespace', (assert) => {
         </div>
     `;
 
-    // Act
-    // now built in as custom assert
-
-    // Assert
     assert.htmlEqual(html, expected);
 });
