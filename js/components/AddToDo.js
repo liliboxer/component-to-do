@@ -29,8 +29,8 @@ class AddToDo extends Component {
     renderTemplate() {
         return /*html*/ `
             <form class="add-to-do">
-                <label>Task: <input name="name"></label>
-                <button>+</button>
+                <label class="task-label">Task: <input name="name"></label>
+                <button class="add-button">+</button>
             </form>
         `;
     }

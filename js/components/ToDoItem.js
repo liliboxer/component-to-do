@@ -19,7 +19,7 @@ class ToDoItem extends Component {
        // checking if checkbox is checked?
         return /*html*/ `
             <li>
-                <input type="checkbox">${todo.task}<span><button>X</button></span>
+                <input class="checkbox"type="checkbox">${todo.task}<span><button class="remove-button">X</button></span>
             </li>
         `;
     }
