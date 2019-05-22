@@ -13,16 +13,15 @@ class App extends Component {
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
 
-        // const addToDo = new AddToDo({
-        //     onAdd: (newToDo) => {
-        //         todos.unshift(newToDo);
-        //         toDoList.update({ todos });
-        //     }
-        // });
+        const addToDo = new AddToDo({
+            onAdd: (newToDo) => {
+                todos.unshift(newToDo);
+                toDoList.update({ todos });
+            }
+        });
 
-        // const addToDoDOM = addToDo.render();
-        // console.log(addToDoDOM);
-        // main.appendChild(addToDoDOM);
+        const addToDoDOM = addToDo.render();
+        main.appendChild(addToDoDOM);
 
         const toDoList = new ToDoList({ todos });
         const toDoListDOM = toDoList.render();
