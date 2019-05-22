@@ -4,7 +4,7 @@ class AddToDo extends Component {
     render() {
         const form = this.renderDOM();
         const onAdd = this.props.onAdd;
-        const taskInput = form.querySelector('input[name=task]');
+        const taskInput = form.querySelector('input[name=name]');
 
         form.addEventListener('submit', event => {
             event.preventDefault();
@@ -12,7 +12,7 @@ class AddToDo extends Component {
             const formData = new FormData(form);
 
             const newToDo = {
-                task: formData.get('task'),
+                task: formData.get('name'),
             };
 
             onAdd(newToDo);
@@ -29,7 +29,7 @@ class AddToDo extends Component {
     renderTemplate() {
         return /*html*/ `
             <form class="add-to-do">
-                <label>Task: <input type="checkbox" name="task"></label>
+                <label>Task: <input name="name"></label>
                 <button>+</button>
             </form>
         `;
