@@ -18,8 +18,12 @@ class Component {
         return dom;
     }
 
+    renderTemplate() {
+        throw new Error(`Component "${this.constructor.name}" needs to implement renderTemplate`);
+    }
+
     update(props) {
-        // update the props:
+        props = props || {};
         Object.keys(props).forEach(key => {
             this.props[key] = props[key];
         });
