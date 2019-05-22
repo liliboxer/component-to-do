@@ -1,7 +1,7 @@
 const todos = [
     {
         task: 'Feed max',
-        completed: false
+        completed: true
     },
     {
         task: 'Water plants',

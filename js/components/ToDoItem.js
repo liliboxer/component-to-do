@@ -16,10 +16,15 @@ class ToDoItem extends Component {
 
     renderTemplate() {
         const todo = this.props.todo;
-       // checking if checkbox is checked?
+        let checked = '';
+
+        if(todo.completed) {
+            checked = 'checked';
+        }
+
         return /*html*/ `
             <li>
-                <input class="checkbox"type="checkbox">${todo.task}<span><button class="remove-button">X</button></span>
+                <input class="checkbox"type="checkbox" ${checked}>${todo.task}<span><button class="remove-button">X</button></span>
             </li>
         `;
     }
