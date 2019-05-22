@@ -6,9 +6,10 @@ class ToDoList extends Component {
         const list = this.renderDOM();
 
         const todos = this.props.todos;
+        const onRemove = this.props.onRemove;
         
         todos.forEach(todo => {
-            const toDoItem = new ToDoItem({ todo });
+            const toDoItem = new ToDoItem({ todo, onRemove });
             const toDoItemDOM = toDoItem.render();
             list.appendChild(toDoItemDOM);
         });

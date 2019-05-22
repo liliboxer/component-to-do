@@ -23,7 +23,14 @@ class App extends Component {
         const addToDoDOM = addToDo.render();
         main.appendChild(addToDoDOM);
 
-        const toDoList = new ToDoList({ todos });
+        const toDoList = new ToDoList({ 
+            todos,
+            onRemove: (toDoToRemove) => {
+                const index = todos.indexOf(toDoToRemove);
+                todos.splice(index, 1);
+                toDoList.update({ todos });
+            }
+        });
         const toDoListDOM = toDoList.render();
         
         main.appendChild(toDoListDOM);
