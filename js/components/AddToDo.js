@@ -4,7 +4,6 @@ class AddToDo extends Component {
     render() {
         const form = this.renderDOM();
         const onAdd = this.props.onAdd;
-        const taskInput = form.querySelector('input[name=task]');
 
         form.addEventListener('submit', event => {
             event.preventDefault();
@@ -17,7 +16,6 @@ class AddToDo extends Component {
             onAdd(newToDo);
             
             form.reset();
-            taskInput.focus();
             document.activeElement.blur();
 
         });
@@ -26,7 +24,7 @@ class AddToDo extends Component {
     renderTemplate() {
         return /*html*/ `
             <form class="add-to-do">
-                <input type="checkbox" name="task">
+                <label>Task: <input type="checkbox" name="task"></label>
                 <button>+</button>
             </form>
         `;
