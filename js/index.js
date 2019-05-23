@@ -1,4 +1,4 @@
-import App from './components/App.js';
+import App from './components/Filter.js';
 
 const app = new App();
 const appDOM = app.render();
