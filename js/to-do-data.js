@@ -5,7 +5,7 @@ const todos = [
     },
     {
         task: 'Water plants',
-        completed: true
+        completed: false
     },
     {
         task: 'Feed self',

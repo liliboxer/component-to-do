@@ -5,10 +5,16 @@ class ToDoItem extends Component {
         const listItem = this.renderDOM();
         const todo = this.props.todo;
         const onRemove = this.props.onRemove;
+        const onDone = this.props.onDone;
         const removeButton = listItem.querySelector('button');
+        const checkbox = listItem.querySelector('input[name=checkbox]');
 
         removeButton.addEventListener('click', () => {
             onRemove(todo);
+        });
+
+        checkbox.addEventListener('change', () => {
+            onDone(todo);
         });
 
         return listItem;
@@ -24,7 +30,7 @@ class ToDoItem extends Component {
 
         return /*html*/ `
             <li>
-                <input class="checkbox"type="checkbox" ${checked}>${todo.task}<span><button class="remove-button">X</button></span>
+                <input class="checkbox"type="checkbox"name="checkbox" ${checked}>${todo.task}<span><button class="remove-button">X</button></span>
             </li>
         `;
     }
