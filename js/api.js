@@ -1,10 +1,10 @@
 const api = {
     storage: localStorage,
-    saveTodo(todo) {
+    saveTodos(todo) {
         const json = JSON.stringify(todo);
         api.storage.setItem('todo', json);
     },
-    getTodo() {
+    getTodos() {
         const json = api.storage.getItem('todo');
         const todo = JSON.parse(json);
         return todo;

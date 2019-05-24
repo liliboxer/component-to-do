@@ -1,10 +1,11 @@
 import Component from './Component.js';
 import Header from './Header.js';
 import ToDoList from './ToDoList.js';
-import todos from '../../js/to-do-data.js';
+import todosData from '../../js/to-do-data.js';
 import AddToDo from './AddToDo.js';
 import Filter from './Filter.js';
 import filterToDos from '../filter-todos.js';
+import api from '../api.js';
 
 class App extends Component {
     render() {
@@ -12,12 +13,21 @@ class App extends Component {
         const header = new Header();
         const headerDOM = header.render();
 
+        let todos;
+        const todosInLocalStorage = api.getTodos();
+        if(todosInLocalStorage) {
+            todos = todosInLocalStorage;
+        } else {
+            todos = todosData;
+        }
+
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
 
         const addToDo = new AddToDo({
             onAdd: (newToDo) => {
                 todos.unshift(newToDo);
+                api.saveTodos(todos);
                 toDoList.update({ todos });
             }
         });
@@ -30,11 +40,13 @@ class App extends Component {
             onRemove: (toDoToRemove) => {
                 const index = todos.indexOf(toDoToRemove);
                 todos.splice(index, 1);
+                api.saveTodos(todos);
                 toDoList.update({ todos });
             },
             onDone: (toDoDone) => {
                 const index = todos.indexOf(toDoDone);
                 todos[index].completed = !todos[index].completed;
+                api.saveTodos(todos);
                 toDoList.update({ todos });
             }
         });
@@ -42,6 +54,7 @@ class App extends Component {
         const filter = new Filter({
             onFilter: filter => {
                 const filtered = filterToDos(todos, filter);
+                api.saveTodos(todos);
                 toDoList.update({ todos: filtered });
 
             }
