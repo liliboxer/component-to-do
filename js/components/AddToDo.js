@@ -29,7 +29,7 @@ class AddToDo extends Component {
     renderTemplate() {
         return /*html*/ `
             <form class="add-to-do">
-                <label class="task-label">Task: <input name="name"></label>
+                <label class="task-label"><input class="add"name="name" placeholder="Add"></label>
                 <button class="add-button">+</button>
             </form>
         `;

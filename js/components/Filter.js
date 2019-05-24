@@ -28,7 +28,7 @@ class Filter extends Component {
         return /*html*/ `
             <section>
                 <form class="filter-section">
-                    <input class="filter" name="search">
+                    <input class="filter" name="search" placeholder="Search">
                     <label>
                         <input type="radio" name="checks" value="all">
                         All

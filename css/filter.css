@@ -7,4 +7,9 @@ label {
 .filter-section {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+input.filter {
+    height: 40px;
 }
