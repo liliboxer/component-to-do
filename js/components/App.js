@@ -37,7 +37,6 @@ class App extends Component {
         const filter = new Filter({
             onFilter: filter => {
                 const filtered = filterToDos(todos, filter);
-                console.log(filtered);
                 toDoList.update({ todos: filtered });
 
             }

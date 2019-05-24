@@ -4,7 +4,6 @@ class Filter extends Component {
     render() {
         const dom = this.renderDOM();
         const form = dom.querySelector('form');
-        // const inputs = dom.querySelectorAll('input');
 
         const filter = {
             checks: '',
