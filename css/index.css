@@ -6,6 +6,11 @@ body {
     align-items: center;
 }
 
+header {
+    text-align: center;
+}
+
+button:focus {outline:0;}
 
 h1 {
     font-family: 'Righteous', cursive;
@@ -16,4 +21,52 @@ li {
     font-family: Helvetica, sans-serif;
     font-size: 12px;
     list-style: none;
+}
+
+.add-button {
+    border: none;
+    padding: 10px;
+    font-size: 30px
+}
+
+.remove-button {
+    border: none;
+    padding: 10px 20px;
+
+}
+
+.task-label {
+    font-family: Helvetica, sans-serif;
+}
+
+.checkbox {
+    border-radius: 100%;
+    margin: 10px;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin: 10px;
+
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input.add {
+    height: 30px;
+}
+
+::placeholder {
+    font-size: 30px;
+    color: rgb(227, 227, 227);
+    font-weight: bold;
 }
