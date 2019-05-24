@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
+label {
+    font-family: 'Righteous', cursive;
+}
+
+.filter-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input.filter {
+    height: 40px;
+}
