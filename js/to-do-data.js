@@ -5,11 +5,11 @@ const todos = [
     },
     {
         task: 'Water plants',
-        completed: false
+        completed: true
     },
     {
         task: 'Feed self',
-        completed: true
+        completed: false
     },
     {
         task: 'Nap',

@@ -3,3 +3,8 @@
 label {
     font-family: 'Righteous', cursive;
 }
+
+.filter-section {
+    display: flex;
+    justify-content: center;
+}

@@ -20,7 +20,7 @@ const todos = [
 
 test('string filter', assert => {
     const filter = {
-        text: 'w'
+        search: 'w'
     };
 
     const filtered = filterToDos(todos, filter);
@@ -28,6 +28,50 @@ test('string filter', assert => {
     assert.deepEqual(filtered, [{
         task: 'Water plants',
         completed: false
+    }]);
+
+});
+
+test('no strings return all tasks', assert => {
+    const filter = {
+        search: ' '
+    };
+
+    const filtered = filterToDos(todos, filter);
+
+    assert.deepEqual(filtered, [{
+        task: 'Feed max',
+        completed: false
+    },
+    {
+        task: 'Water plants',
+        completed: false
+    },
+    {
+        task: 'Feed self',
+        completed: true
+    }]);
+});
+
+test('all returns all', assert => {
+    const filter = {
+        checks: 'all',
+        search: ''
+    };
+
+    const filtered = filterToDos(todos, filter);
+
+    assert.deepEqual(filtered, [{
+        task: 'Feed max',
+        completed: false
+    },
+    {
+        task: 'Water plants',
+        completed: false
+    },
+    {
+        task: 'Feed self',
+        completed: true
     }]);
 
 });

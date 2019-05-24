@@ -5,3 +5,4 @@ const appDOM = app.render();
 
 const root = document.getElementById('app');
 root.appendChild(appDOM);
+
