@@ -34,7 +34,7 @@ class App extends Component {
             },
             onDone: (toDoDone) => {
                 const index = todos.indexOf(toDoDone);
-                todos[index].completed = true;
+                todos[index].completed = !todos[index].completed;
                 toDoList.update({ todos });
             }
         });
