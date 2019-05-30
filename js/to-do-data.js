@@ -9,7 +9,7 @@ const todos = [
     },
     {
         task: 'Feed self',
-        completed: false
+        completed: true
     },
     {
         task: 'Nap',
